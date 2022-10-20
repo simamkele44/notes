@@ -1,13 +1,13 @@
-import { MyStack } from "./MyStack";
-import { App } from "@serverless-stack/resources";
+import { StorageStack } from "./storageStack";
 
-export default function (app: App) {
+export default function main(app) {
   app.setDefaultFunctionProps({
     runtime: "nodejs16.x",
     srcPath: "services",
     bundle: {
       format: "esm",
-    },
+  },
   });
-  app.stack(MyStack);
+
+  app.stack(StorageStack);
 }
